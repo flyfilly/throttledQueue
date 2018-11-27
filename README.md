@@ -1,1 +1,1 @@
-Simple Queue to throttle processing.
+Simple node library that provides a queue to throttle processing and emit events.
