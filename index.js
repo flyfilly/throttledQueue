@@ -26,6 +26,8 @@ ThrottledQueue.prototype.take = function() {
     this.emit("noItems");
     this.stop();
   }
+
+  return item;
 };
 
 ThrottledQueue.prototype.process = function() {
