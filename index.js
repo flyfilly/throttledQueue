@@ -10,7 +10,7 @@ ThrottledQueue.prototype = new events.EventEmitter();
 
 ThrottledQueue.prototype.add = function(item) {
   if (Array.isArray(item)) {
-    this.queue = [...item, this.queue];
+    this.queue = [...item, ...this.queue];
   } else {
     this.queue.unshift(item);
   }
