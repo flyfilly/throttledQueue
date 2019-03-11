@@ -8,9 +8,14 @@ const ThrottledQueue = function(throttle = 1000) {
 
 ThrottledQueue.prototype = new events.EventEmitter();
 
-ThrottledQueue.prototype.add = function(thingy) {
-  this.queue.unshift(thingy);
-  this.emit("addedItem", thingy);
+ThrottledQueue.prototype.add = function(item) {
+  if (Array.isArray(item)) {
+    this.queue = [...item, ...this.queue];
+  } else {
+    this.queue.unshift(item);
+  }
+
+  this.emit("addedItem", item);
 };
 
 ThrottledQueue.prototype.take = function() {
@@ -21,6 +26,8 @@ ThrottledQueue.prototype.take = function() {
     this.emit("noItems");
     this.stop();
   }
+
+  return item;
 };
 
 ThrottledQueue.prototype.process = function() {
