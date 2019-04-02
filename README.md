@@ -48,7 +48,7 @@ Ends or pauses the queue processing cycle.
 
 ## Events
 
-#### addedItem
+#### itemAdded
 
 Event emitted when an item is added to the queue.
 
@@ -56,10 +56,10 @@ Event emitted when an item is added to the queue.
 
 Event emitted when an item is removed from the queue during processing.
 
-#### removedItem
+#### itemRemoved
 
 Event emitted when an item is removed from the queue.
 
-#### noItems
+#### itemsGone
 
 Event emitted when the queue has no more items to be processed.

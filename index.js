@@ -15,15 +15,15 @@ ThrottledQueue.prototype.add = function(item) {
     this.queue.unshift(item);
   }
 
-  this.emit("addedItem", item);
+  this.emit("itemAdded", item);
 };
 
 ThrottledQueue.prototype.take = function() {
   const item = this.queue.pop();
-  this.emit("removedItem", item);
+  this.emit("itemRemoved", item);
 
   if (0 === this.queue.length) {
-    this.emit("noItems");
+    this.emit("itemsGone");
     this.stop();
   }
 
