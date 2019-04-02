@@ -55,7 +55,7 @@ ThrottledQueue.prototype.stop = function() {
   }
   clearInterval(this.interval);
   this.interval = null;
-  return "queue stopped.";
+  return "the queue is now stopped.";
 };
 
 module.exports = ThrottledQueue;
